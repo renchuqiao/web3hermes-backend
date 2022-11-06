@@ -3,7 +3,7 @@ export class PostRequestDto {
     url: string;
 }
 
-export class PostResponseDto {
+export class ResponseDto {
     from: string;
     to?: string;
     data?: string;
