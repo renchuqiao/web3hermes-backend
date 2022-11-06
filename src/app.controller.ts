@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { AppService } from './app.service';
-import { PostRequestDto, ResponseDto } from './utils/types';
+import { GetUriResponseDto, PostRequestDto, ResponseDto } from './utils/types';
 
 @Controller()
 export class AppController {
@@ -11,8 +11,18 @@ export class AppController {
     return this.appService.post(request);
   }
 
-  // @Post('/collect')
-  // collect(): Promise<ResponseDto> {
-  //   return this.appService.collect();
-  // }
+  @Post('/collect')
+  collect(): Promise<ResponseDto> {
+    return this.appService.collect();
+  }
+
+  @Get('/image')
+  getImage(): Promise<GetUriResponseDto> {
+    return this.appService.getImage();
+  }
+
+  @Get('/nft')
+  getNft(): Promise<GetUriResponseDto> {
+    return this.appService.getNft();
+  }
 }

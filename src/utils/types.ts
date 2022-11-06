@@ -11,3 +11,7 @@ export class ResponseDto {
     gas?: string;
     txId?: string;
 }
+
+export class GetUriResponseDto {
+    uri: string;
+}
